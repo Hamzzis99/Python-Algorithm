@@ -11,13 +11,20 @@ def main():
   for a in range(count):
     min_value = array[a]
     min_at = a
+    vis.selection(a)
     for b in range(a + 1, count):
+      vis.compare(min_at, b)
       if min_value > array[b]:
         min_value = array[b]
         min_at = b
-    array[a], array[min_at] = array[min_at], array[a]
-    print(f'{min_at=}. swap {a} <=> {min_at}')
+        vis.selection(b)
+      vis.swap(a, min_at)
 
+    array[a], array[min_at] = array[min_at], array[a]
+    vis.mark_done(a)
+    print(f'{min_at=}. swap {a} <=> {min_at}')
+    
+    
   print('after :', array)
 
 if __name__ == '__main__':
