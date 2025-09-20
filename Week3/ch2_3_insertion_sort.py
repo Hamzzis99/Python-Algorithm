@@ -19,7 +19,7 @@ def main_level_1():
 
   print('after :', array)
 
-def main():
+def main_level_2():
   print('before:', array)
   count = len(array)
 
@@ -32,6 +32,31 @@ def main():
         array[j-1], array[j] = array[j], array[j-1]
       else:
         break
+
+  print('after :', array)
+
+def main():
+  print('before:', array)
+  count = len(array)
+
+  for i in range(1, count):
+    vis.mark_end(i, True)
+    v = array[i]
+    j = i
+    while j > 0:
+      vis.compare(j-1, j)
+      if array[j-1] > v:
+        vis.shift(j-1, j)
+        array[j] = array[j-1]
+        vis.draw()
+        j -= 1
+      else:
+        break
+    vis.shift(i, j, True)
+    array[j] = v
+    vis.draw()
+
+  vis.draw()
 
   print('after :', array)
 
