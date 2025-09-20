@@ -1,5 +1,7 @@
 from data_unsorted import numbers
-from random import randint, seed
+from random import randint, seed, shuffle
+from time import time
+
 from pyvisalgo import BubbleSortVisualizer as Visualizer
 
 def main():
