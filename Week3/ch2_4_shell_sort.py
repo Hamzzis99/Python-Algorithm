@@ -11,10 +11,9 @@ def next_gap(gap):
   for g in GAPS: 
     if gap > g: return g
 
-def main():
+def main_level_1():
   print('before:', array)
   count = len(array)
-
   gap = next_gap(count / 2.5)
   print(f'{count=} first_gap={gap}')
   while True:
@@ -40,7 +39,36 @@ def main():
         start += gap
     gap = next_gap(gap)
     if gap < 1: break
-    
+  print('after :', array)
+
+def main():
+  print('before:', array)
+  count = len(array)
+
+  gap = next_gap(count / 2.5)
+  print(f'{count=} first_gap={gap}')
+  while True:
+    vis.set_gap(gap)
+    for start in range(gap, count):
+        vis.mark_end(start, True)
+        v = array[start]
+        i = start
+        while i >= gap:
+          vis.compare(i-gap, i)
+          if array[i - gap] > v:
+            vis.shift(i-gap, i)
+            array[i] = array[i - gap]
+            vis.draw()
+            i -= gap
+          else:
+            break
+        vis.shift(start, i, True)
+        array[i] = v
+        vis.draw()
+        start += gap
+    gap = next_gap(gap)
+    if gap < 1: break
+
   print('after :', array)
 
 if __name__ == '__main__':
