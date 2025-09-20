@@ -11,6 +11,9 @@ def main():
       if array[i] > array[i+1]:
         vis.swap(i, i+1)        
         array[i], array[i+1] = array[i+1], array[i]
+    #visualize
+    vis.bubble_end(end)
+  vis.bubble_end(0)
   print('after :', array)
 
 before: [71, 30, 18, 51, 77, 37, 3, 93, 90, 48]
