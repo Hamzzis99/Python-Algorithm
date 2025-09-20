@@ -1,11 +1,24 @@
+from data_unsorted import numbers
 from random import randint, seed
-from pyvisalgo import BubbleSortVisualizer as Visualizer
+from pyvisalgo import Dummy as Visualizer
 
 def main():
-  print(array)
+  print('before:', array)
+  count = len(array)
+  end = count - 1
+  if True: 
+    for i in range(end):
+      if array[i] > array[i+1]:
+        array[i], array[i+1] = array[i+1], array[i]
+  print('after :', array)
+
+''' Bubble 을 한 칸 진행해 본 결과, 다음과 같이 출력된다.
+before: [71, 30, 18, 51, 77, 37, 3, 93, 90, 48]
+after : [30, 18, 51, 71, 37, 3, 77, 90, 48, 93]
+'''
 
 if __name__ == '__main__':
-  seed('Hello') # 시드 설정, 이로부터 똑같은 수가 나오게 됨
+  seed('Hello')
   vis = Visualizer('Bubble Sort')
   while True:
     count = randint(10, 30)
@@ -14,6 +27,5 @@ if __name__ == '__main__':
     main()
     vis.draw()
 
-    # R key 를 누르면 다음 case 가 실행된다
     again = vis.end()
     if not again: break
