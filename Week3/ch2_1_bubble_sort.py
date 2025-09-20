@@ -8,7 +8,9 @@ def main():
   end = count - 1
   if True: 
     for i in range(end):
+      vis.compare(i, i+1)
       if array[i] > array[i+1]:
+         vis.swap(i, i+1)
         array[i], array[i+1] = array[i+1], array[i]
   print('after :', array)
 
