@@ -1,0 +1,73 @@
+Bubble Sort 
+count=100 elapsed=0.000
+count=1000 elapsed=0.022
+count=2000 elapsed=0.106
+count=3000 elapsed=0.225
+count=4000 elapsed=0.412
+count=5000 elapsed=0.633
+count=6000 elapsed=0.942
+count=7000 elapsed=1.313
+count=8000 elapsed=1.686
+count=9000 elapsed=2.145
+count=10000 elapsed=2.684
+count=15000 elapsed=6.246
+count=20000 elapsed=11.382
+
+Selection Sort
+count=100 elapsed=0.000
+count=1000 elapsed=0.010
+count=2000 elapsed=0.039
+count=3000 elapsed=0.079
+count=4000 elapsed=0.142
+count=5000 elapsed=0.213
+count=6000 elapsed=0.302
+count=7000 elapsed=0.426
+count=8000 elapsed=0.529
+count=9000 elapsed=0.673
+count=10000 elapsed=0.834
+count=15000 elapsed=1.895
+count=20000 elapsed=3.496
+count=30000 elapsed=8.975
+count=40000 elapsed=15.704
+count=50000 elapsed=26.624
+
+Insertion Sort
+count=100 elapsed=0.000
+count=1000 elapsed=0.010
+count=2000 elapsed=0.046
+count=3000 elapsed=0.108
+count=4000 elapsed=0.206
+count=5000 elapsed=0.306
+count=6000 elapsed=0.429
+count=7000 elapsed=0.588
+count=8000 elapsed=0.801
+count=9000 elapsed=1.012
+count=10000 elapsed=1.258
+count=15000 elapsed=2.824
+count=20000 elapsed=5.105
+count=30000 elapsed=11.239
+count=40000 elapsed=20.214
+count=50000 elapsed=31.401
+
+Shell Sort
+count=   100 elapsed=  0.000
+count=  1000 elapsed=  0.001
+count=  2000 elapsed=  0.003
+count=  3000 elapsed=  0.002
+count=  4000 elapsed=  0.003
+count=  5000 elapsed=  0.004
+count=  6000 elapsed=  0.006
+count=  7000 elapsed=  0.006
+count=  8000 elapsed=  0.008
+count=  9000 elapsed=  0.010
+count= 10000 elapsed=  0.010
+count= 15000 elapsed=  0.021
+count= 20000 elapsed=  0.023
+count= 30000 elapsed=  0.041
+count= 40000 elapsed=  0.051
+count= 50000 elapsed=  0.084
+count=100000 elapsed=  0.160
+count=200000 elapsed=  0.410
+count=300000 elapsed=  0.754
+count=400000 elapsed=  1.250
+count=500000 elapsed=  1.521
