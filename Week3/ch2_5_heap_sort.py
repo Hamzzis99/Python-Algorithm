@@ -35,7 +35,10 @@ def main():
     vis.swap(0, last_sort_index)
     array[0], array[last_sort_index] = array[last_sort_index], array[0] 
     vis.set_tree_size(last_sort_index)
+    heapify(0, last_sort_index)
+    last_sort_index -= 1
 
+  vis.draw()
   print('after :', array)
 
 
