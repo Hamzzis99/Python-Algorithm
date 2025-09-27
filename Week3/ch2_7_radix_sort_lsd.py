@@ -1,5 +1,5 @@
 from data_unsorted_a_lot import numbers
-from pyvisalgo import CountSortVisualizer as Visualizer
+from pyvisalgo import RadixSortLsdVisualizer as Visualizer
 from time import time
 from random import randint, seed, shuffle
 from math import log10, ceil
@@ -13,7 +13,15 @@ def main():
   radix_count = ceil(log10(max_value))
   print(f'{max_value=} {log10(max_value)=} {radix_count=}')
   counts = [0] * 10
-  print(f'init  - {counts=}') 
+
+  div = 1
+  for pos in range(1):
+    for i in range(count):
+      v = array[i] // div % 10
+      counts[v] += 1
+      vis.set_inc_index(div, i)
+
+    print(f'{counts=}') 
   # print('after :', array)
 
 if __name__ == '__main__':
