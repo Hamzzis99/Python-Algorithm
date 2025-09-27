@@ -7,6 +7,11 @@ def main():
   print('before:', array)
   count = len(array)
 
+  global counts
+  max_value = max(array)
+  counts = [0] * (max_value + 1)
+  print(f'init  - {counts=}') 
+
   print('after :', array)
 
 if __name__ == '__main__':
