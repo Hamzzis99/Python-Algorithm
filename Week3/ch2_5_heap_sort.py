@@ -30,7 +30,7 @@ def main():
     heapify(n, count)
 
   last_sort_index = count - 1
-  if last_sort_index > 0:
+  while last_sort_index > 0:
     vis.compare(0, last_sort_index)
     vis.swap(0, last_sort_index)
     array[0], array[last_sort_index] = array[last_sort_index], array[0] 
@@ -38,7 +38,7 @@ def main():
     heapify(0, last_sort_index)
     last_sort_index -= 1
 
-  vis.draw()
+  vis.set_tree_size(0)
   print('after :', array)
 
 
