@@ -23,7 +23,17 @@ def main():
     vis.draw()
     vis.wait(1000)
 
+  global result
+  result = [None] * count
 
+  for i in range(count-1, -1, -1):
+    v = array[i]
+    at = counts[v] - 1
+    counts[v] -= 1
+    vis.set_inc_index(i, False)
+    result[at] = v
+
+  vis.set_inc_index(-1, False)
   print('after :', array)
 
 if __name__ == '__main__':
