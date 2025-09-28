@@ -55,11 +55,10 @@ if __name__ == '__main__':
   seed('HelloCountSort')
   vis = Visualizer('Radix Sort: LSD')
   while True:
-    kind = 1000
-    count = randint(30, 150)
+    kind = 10000
+    count = randint(30, 100)
     print(f'Creating data: {kind=} {count=}')
-    begin = 500 + randint(1, 1000)
-    array = list(map(lambda x: x%kind, numbers[begin:begin+count]))
+    array = list(map(lambda x: randint(1, kind), range(count)))
     vis.setup(vis.get_main_module())
     main()
     vis.draw()
