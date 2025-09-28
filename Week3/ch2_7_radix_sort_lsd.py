@@ -5,6 +5,7 @@ from random import randint, seed, shuffle
 from math import log10, ceil
 
 def main():
+  global array
   print('before:', array)
   count = len(array)
 
@@ -12,13 +13,13 @@ def main():
   max_value = max(array)
   radix_count = ceil(log10(max_value))
   print(f'{max_value=} {log10(max_value)=} {radix_count=}')
-  counts = [0] * 10
 
   global result
   result = []
 
   div = 1
-  for pos in range(1):
+  for pos in range(radix_count):
+    counts = [0] * 10
     for i in range(count):
       v = array[i] // div % 10
       counts[v] += 1
@@ -42,6 +43,11 @@ def main():
       vis.set_inc_index(div, i, False)
       result[at] = array[i]
       # print(f'{i=:2d} {v=:2d} {result=}')
+
+    vis.result_to_array()
+    array = result
+    result = []
+    div *= 10
 
   # print('after :', array)
 
