@@ -11,7 +11,7 @@ def main():
 
   global counts
   max_value = max(array)
-  radix_count = ceil(log10(max_value))
+  radix_count = ceil(log10(max_value + 1))
   print(f'{max_value=} {log10(max_value)=} {radix_count=}')
 
   global result
