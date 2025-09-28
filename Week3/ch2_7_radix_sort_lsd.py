@@ -14,6 +14,16 @@ def main():
   print(f'{max_value=} {log10(max_value)=} {radix_count=}')
   counts = [0] * 10
 
+  div = 1
+  for pos in range(1):
+    for i in range(count):
+      v = array[i] // div % 10
+      counts[v] += 1
+      vis.set_inc_index(div, i)
+
+    print(f'{counts=}') 
+  # print('after :', array)
+
 if __name__ == '__main__':
   seed('HelloCountSort')
   vis = Visualizer('Radix Sort: LSD')
