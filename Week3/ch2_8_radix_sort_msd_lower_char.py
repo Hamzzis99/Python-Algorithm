@@ -29,6 +29,21 @@ def radix_lower_char_msd(array, left, right, depth=0):
     counts[i+1] += counts[i]
   print(' ' * depth, f'index={counts}')
 
+  for i in range(right, left-1, -1):
+    string = array[i]
+    str_len = len(string)
+    slot = (ord(string[depth]) - BASE) if str_len > depth else 0
+    # print(f'{depth=} {str_len=:<2d} {slot=:<2d} {string=}')
+    counts[slot] -= 1
+    at = left + counts[slot]
+    temp[at] = array[i]
+
+  print(' ' * depth, f'{depth=} {left=}, {right=}', array[left:right+1])
+  array[left:right+1] = temp[left:right+1]
+  print(' ' * depth, '-' * 30)
+  print(' ' * depth, f'{depth=} {left=}, {right=}', array[left:right+1])
+  print(' ' * depth, '-' * 30)
+
 word_count = len(words)
 temp = [0 for _ in range(word_count)]
 radix_lower_char_msd(words, 0, word_count-1)
