@@ -33,6 +33,15 @@ def main():
 
     print(f'indices={counts}') 
 
+    result = [None] * count
+
+    for i in range(count-1, -1, -1):
+      v = array[i] // div % 10
+      at = counts[v] - 1
+      counts[v] -= 1
+      vis.set_inc_index(div, i, False)
+      result[at] = array[i]
+      # print(f'{i=:2d} {v=:2d} {result=}')
 
   # print('after :', array)
 
