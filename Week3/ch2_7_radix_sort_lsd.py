@@ -14,6 +14,9 @@ def main():
   print(f'{max_value=} {log10(max_value)=} {radix_count=}')
   counts = [0] * 10
 
+  global result
+  result = []
+
   div = 1
   for pos in range(1):
     for i in range(count):
@@ -21,7 +24,16 @@ def main():
       counts[v] += 1
       vis.set_inc_index(div, i)
 
-    print(f'{counts=}') 
+    print(f'counts= {counts}') 
+    vis.set_inc_index(div, -1)
+    for i in range(9):
+      counts[i+1] += counts[i]
+      vis.draw()
+      vis.wait(1000)
+
+    print(f'indices={counts}') 
+
+
   # print('after :', array)
 
 if __name__ == '__main__':
