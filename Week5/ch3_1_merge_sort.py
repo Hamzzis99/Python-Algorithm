@@ -11,13 +11,25 @@ def main():
   mergeSort(0, count-1)
   # print('after :', array)
 
+def insertionSort(left, right):
+  # print(f'B:{array[left:right+1]=} {left=} {right=}')
+  for i in range(left + 1, right + 1):
+    v = array[i]
+    j = i - 1
+    while j >= left and array[j] > v:
+      array[j+1] = array[j]
+      # print(f'-:{array[left:right+1]=}')
+      j -= 1
+    # print(f'{i=} {j=} {v=}')
+    array[j+1] = v
+    # print(f'=:{array[left:right+1]=} {j=}')
+  # print(f'A:{array[left:right+1]=}')
+
+
 def mergeSort(left, right):
   if right <= left: return
-  if right == left + 1:
-    # vis.compare(left, right)
-    if array[left] > array[right]:
-      # vis.swap(left, right)
-      array[left], array[right] = array[right], array[left]
+  if right < left + 8:
+    insertionSort(left, right)
     return
   mid = (left + right) // 2
   # vis.push(left, mid, right)
