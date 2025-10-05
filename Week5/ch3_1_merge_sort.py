@@ -6,13 +6,17 @@ from random import randint, seed, shuffle
 def main():
   print('before:', array)
   count = len(array)
-  mid = count // 2
-  array[0:mid] = sorted(array[0:mid])
-  array[mid:] = sorted(array[mid:])
-
-  vis.push(0, mid-1, count-1)
-  merge(0, mid, count-1)
+  mergeSort(0, count-1)
   print('after :', array)
+
+def mergeSort(left, right):
+  if right <= left: return
+  mid = (left + right) // 2
+  vis.push(left, mid, right)
+  mergeSort(left, mid)
+  mergeSort(mid+1, right)
+  merge(left, mid+1, right)
+  vis.pop()
 
 def merge(left, right, end):
   merged = []
@@ -45,8 +49,6 @@ def merge(left, right, end):
     array[l] = n
     l += 1
     # vis.erase_merged()
-
-  vis.pop()
 
 if __name__ == '__main__':
   seed('Hello')
