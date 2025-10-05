@@ -18,7 +18,7 @@ def mergeSort(left, right):
     if array[left] > array[right]:
       # vis.swap(left, right)
       array[left], array[right] = array[right], array[left]
-      return
+    return
   mid = (left + right) // 2
   # vis.push(left, mid, right)
   mergeSort(left, mid)
