@@ -8,12 +8,19 @@ from random import randint, seed, shuffle
 def main():
   print('before:', array)
   count = len(array)
-
-  vis.push(0, count-1)
-  pivot = partition(0, count-1)
-  vis.set_pivot(pivot)
-
+  quickSort(0, count-1)
   print('after :', array)
+
+def quickSort(left, right):
+  if left == right: vis.fix(left)
+  if left >= right: return
+  vis.push(left, right)
+  pivot = partition(left, right)
+  vis.set_pivot(pivot)
+  quickSort(left, pivot-1)
+  quickSort(pivot+1, right)
+  vis.pop()
+
 
 def partition(left, right):
 
