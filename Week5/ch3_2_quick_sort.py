@@ -29,6 +29,13 @@ def partition(left, right):
       if p <= right: vis.compare(pi, p)
       if p > right or array[p] > pivot: break 
 
+    while True:
+      q -= 1
+      vis.set_q(q)
+      if q < p: break
+      if q >= left: vis.compare(pi, q)
+      if q < left or array[q] < pivot: break
+
     vis.set_left(p)
     vis.set_right(q)
 
