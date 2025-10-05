@@ -10,7 +10,8 @@ def main():
   count = len(array)
 
   vis.push(0, count-1)
-  partition(0, count-1)
+  pivot = partition(0, count-1)
+  vis.set_pivot(pivot)
 
   print('after :', array)
 
@@ -47,9 +48,11 @@ def partition(left, right):
 
     vis.swap(p, q)
     array[p], array[q] = array[q], array[p] 
+
   if left != q:
     vis.swap(left, q, True)
     array[left], array[q] = array[q], array[left]
+  return q
 
 if __name__ == '__main__':
   seed('Hello')
