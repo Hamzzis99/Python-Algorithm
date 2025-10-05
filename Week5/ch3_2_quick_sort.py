@@ -7,7 +7,7 @@ def main():
   # print('before:', array)
   count = len(array)
   quickSort(0, count-1)
-  # insertionSort(0, count-1)
+  insertionSort(0, count-1)
 
   # print('after :', array)
 
@@ -15,7 +15,7 @@ def quickSort(left, right):
   if left == right: vis.fix(left)
   if left >= right: return
   if right < left + 4:
-    insertionSort(left, right)
+    #insertionSort(left, right)
     return
 
 def insertionSort(left, right):
