@@ -46,16 +46,12 @@ def merge(left, right, end):
 
   # vis.end_merge()
 
-  l = left
-  for n in merged:
-    array[l] = n
-    l += 1
-    # vis.erase_merged()
+  array[left:end+1] = merged
+  # l = left
+  # for n in merged:
+  #   array[l] = n
+  #   l += 1
 
-  l = left
-  for n in merged:
-    array[l] = n
-    l += 1
     # vis.erase_merged()
 
 if __name__ == '__main__':
