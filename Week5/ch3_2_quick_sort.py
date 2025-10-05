@@ -9,7 +9,28 @@ def main():
   print('before:', array)
   count = len(array)
 
+  vis.push(0, count-1)
+  partition(0, count-1)
+
   print('after :', array)
+
+def partition(left, right):
+
+  pi = left
+  pivot = array[pi]
+
+  p, q = left, right + 1
+
+  if True:
+    while True:
+      p += 1
+      vis.set_p(p)
+      if q < p: break
+      if p <= right: vis.compare(pi, p)
+      if p > right or array[p] > pivot: break 
+
+    vis.set_left(p)
+    vis.set_right(q)
 
 if __name__ == '__main__':
   seed('Hello')
