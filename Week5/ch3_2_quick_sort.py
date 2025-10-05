@@ -14,15 +14,9 @@ def main():
 def quickSort(left, right):
   if left == right: vis.fix(left)
   if left >= right: return
-  if right == left + 1:
-    # vis.compare(left, right)
-    if array[left] > array[right]:
-      # vis.swap(left, right)
-      array[left], array[right] = array[right], array[left]
-    return  
-  # if right < left + 4:
-  #   # insertionSort(left, right)
-  #   return
+  if right < left + 4:
+    insertionSort(left, right)
+    return
 
 def insertionSort(left, right):
   for i in range(left + 1, right + 1):
