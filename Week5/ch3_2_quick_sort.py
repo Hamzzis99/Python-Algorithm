@@ -13,18 +13,29 @@ def main():
 def quickSort(left, right): #q=inclusive
   # if left == right: vis.fix(left)
   if left >= right: return
-  if right == left + 1:
-    # vis.compare(left, right)
-    if array[left] > array[right]:
-      # vis.swap(left, right)
-      array[left], array[right] = array[right], array[left]
-    return  
+  if right < left + 4:
+    insertionSort(left, right)
+    return
+  
   # vis.push(left, right)
   pivot = partition(left, right)
   # vis.set_pivot(pivot)
   quickSort(left, pivot-1)
   quickSort(pivot+1, right)
   # vis.pop()
+
+def insertionSort(left, right): #right=inclusive
+  for i in range(left + 1, right + 1):
+    v = array[i]
+    # vis.mark_end(i, v)
+    j = i - 1
+    while j >= left and array[j] > v:
+      # vis.shift(j)
+      array[j+1] = array[j]
+      j -= 1
+    # vis.insert(i, j+1)
+    array[j+1] = v
+
 
 def partition(left, right):
 
