@@ -21,13 +21,15 @@ def partition(left, right):
 
   p, q = left, right + 1
 
-  if True:
+  while True:
     while True:
       p += 1
       vis.set_p(p)
       if q < p: break
       if p <= right: vis.compare(pi, p)
       if p > right or array[p] > pivot: break 
+
+      if p <= right: vis.set_left(p)
 
     while True:
       q -= 1
@@ -36,11 +38,16 @@ def partition(left, right):
       if q >= left: vis.compare(pi, q)
       if q < left or array[q] < pivot: break
 
-    vis.swap(p, q)
-    array[p], array[q] = array[q], array[p] 
+      if q >= left: vis.set_right(q)
+
+    if p >= q: break
 
     vis.set_left(p)
     vis.set_right(q)
+
+    vis.swap(p, q)
+    array[p], array[q] = array[q], array[p] 
+
 
 if __name__ == '__main__':
   seed('Hello')
