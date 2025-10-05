@@ -47,7 +47,9 @@ def partition(left, right):
 
     vis.swap(p, q)
     array[p], array[q] = array[q], array[p] 
-
+  if left != q:
+    vis.swap(left, q, True)
+    array[left], array[q] = array[q], array[left]
 
 if __name__ == '__main__':
   seed('Hello')
