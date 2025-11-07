@@ -10,4 +10,4 @@ if __name__ == '__main__':
   cities = five_letter_cities[beg:end]
   vis.setup(vis.get_main_module())
   vis.draw()
-  vis.end()
+  vis.end() #레츠고우
