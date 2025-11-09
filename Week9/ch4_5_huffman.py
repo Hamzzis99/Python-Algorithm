@@ -39,3 +39,8 @@ for ch in counts:
   heappush(nodes, node)
 
 print(nodes)
+
+while nodes:
+  node = heappop(nodes)
+  print(node, end=', ')
+print()
