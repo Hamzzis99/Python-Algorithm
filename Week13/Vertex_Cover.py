@@ -1,4 +1,5 @@
 from pyvisalgo import VertexCoverVisualizer as Visualizer
+from copy import deepcopy
 import data_sample_cities as dsc
 
 
@@ -11,6 +12,17 @@ class VertexCover:
 
   def setCoverMain(self):
     print('Using Set Cover')
+    n_cities = len(self.cities)
+    n_edges = len(self.edges)
+    self.u = { i for i in range(n_edges) }
+    self.f = [ set() for _ in range(n_cities) ]
+    for i in range(n_edges):
+      u,v,w = self.edges[i]
+      self.f[u].add(i)
+      self.f[v].add(i)
+    print(self.u, self.f)
+    self.U = deepcopy(self.u)
+    self.F = deepcopy(self.f)
     vis.draw()
 
   def maxMatchMain(self):
