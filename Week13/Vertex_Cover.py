@@ -1,5 +1,6 @@
 from pyvisalgo import VertexCoverVisualizer as Visualizer
 from copy import deepcopy
+from random import randrange
 import data_sample_cities as dsc
 
 
@@ -50,6 +51,34 @@ class VertexCover:
     print(self.adjs)
     self.vc = set()
     edge_count = 0
+
+    vertices = list(range(n_cities))
+    while edge_count < n_edges:
+      print(f'{self.adjs=}, {vertices=}')
+      vi = randrange(len(vertices))
+      u = vertices.pop(vi)
+      print(f'{vi=} {u=} {self.adjs[u]=}')
+      if not self.adjs[u]: continue
+      v = self.adjs[u].pop()
+      print(f'{u=} {v=}')
+      vis.matching(u,v)
+
+      for n in (u, v):
+        self.vc.add(n)
+        print(f'{self.vc=}')
+
+        for k in range(n_cities):
+          if k in self.adjs[n]:
+            print(f'<{n=} {k=} {self.adjs[n]=} {self.adjs[k]=}')
+            self.adjs[n].remove(k)
+            if n in self.adjs[k]:
+              self.adjs[k].remove(n)
+            print(f'>{n=} {k=} {self.adjs[n]=} {self.adjs[k]=}')
+            edge_count += 1
+
+      print(f'vc={self.vc} {edge_count=} {n_edges=}')
+
+      break
 
     vis.draw()
 
